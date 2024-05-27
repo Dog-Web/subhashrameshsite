@@ -5,7 +5,12 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
-    extend: {},
+    extend: {
+      zIndex: {
+        '1000': '1000', // Add custom high z-index value
+      }
+
+    },
   },
   plugins: [],
 }

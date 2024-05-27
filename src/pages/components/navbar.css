@@ -1,0 +1,38 @@
+/* src/styles/global.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+    position: relative;
+  }
+  
+  .nav-link::before,
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .nav-link::before {
+    top: 0;
+  }
+  
+  .nav-link::after {
+    bottom: 0;
+  }
+  
+  .nav-link:hover::before,
+  .nav-link:hover::after {
+    background-color: #1a202c; /* Tailwind gray-900 */
+  }
+  
+  .nav-link.font-bold::before,
+  .nav-link.font-bold::after {
+    background-color: #1a202c; /* Tailwind gray-900 */
+  }

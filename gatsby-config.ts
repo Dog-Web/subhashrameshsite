@@ -9,16 +9,16 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-google-gtag", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-postcss",  "gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": "src/images/logo.png"
     }
   }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
-      "path": "./src/images/"
+      "path": "./src/images/showcase/"
     },
     __key: "images"
   }, {
@@ -28,7 +28,26 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }]
+  }, 
+  {
+    resolve: 'gatsby-plugin-google-gtag',
+    options: {
+      trackingIds: [
+        'UA-XXXXXXXXX-X', // Replace with your Google Analytics tracking ID
+      ],
+      gtagConfig: {
+        anonymize_ip: true,
+        cookie_expires: 0,
+      },
+      pluginConfig: {
+        head: true,
+        respectDNT: true,
+        exclude: ['/preview/**', '/do-not-track/me/too/'],
+      },
+    },
+  }
+
+]
 };
 
 export default config;
