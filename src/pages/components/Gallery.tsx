@@ -29,18 +29,18 @@ const Gallery: React.FC = () => {
 `);
 const images = data.allFile.nodes;
   return (
-    <div className="relative overflow-hidden h-screen bg-gray-100 ">
-      <div className="absolute inset-0 flex animate-scroll">
-      {images.map((image:any, index:any) => {
-          const img = getImage(image.childImageSharp.gatsbyImageData);
-          return (
-            <div key={image.id} className="flex-shrink-0 w-full h-full opacity-75 hover:opacity-100 transition-opacity duration-1000">
-              <GatsbyImage image={img} alt={`Gallery Image ${index + 1}`} className="w-full h-full object-cover" />
-            </div>
-          );
-        })}
-      </div>
+    <div className="overflow-hidden h-screen relative z-0">
+    <div className="absolute inset-0 flex animate-scroll">
+      {images.map((image: any, index: any) => {
+        const img = getImage(image.childImageSharp.gatsbyImageData);
+        return (
+          <div key={image.id} className="flex-shrink-0 w-full h-full opacity-75 hover:opacity-100 transition-opacity duration-1000">
+            <GatsbyImage image={img} alt={`Gallery Image ${index + 1}`} className="w-full h-full object-cover" />
+          </div>
+        );
+      })}
     </div>
+  </div>
   );
 };
 
