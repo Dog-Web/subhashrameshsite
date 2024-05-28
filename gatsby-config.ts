@@ -14,7 +14,7 @@ const config: GatsbyConfig = {
     options: {
       "icon": "src/images/logo.png"
     }
-  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
@@ -29,23 +29,7 @@ const config: GatsbyConfig = {
     },
     __key: "pages"
   }, 
-  {
-    resolve: 'gatsby-plugin-google-gtag',
-    options: {
-      trackingIds: [
-        'UA-XXXXXXXXX-X', // Replace with your Google Analytics tracking ID
-      ],
-      gtagConfig: {
-        anonymize_ip: true,
-        cookie_expires: 0,
-      },
-      pluginConfig: {
-        head: true,
-        respectDNT: true,
-        exclude: ['/preview/**', '/do-not-track/me/too/'],
-      },
-    },
-  }
+
 
 ]
 };
