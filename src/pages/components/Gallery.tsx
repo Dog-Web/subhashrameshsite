@@ -7,8 +7,8 @@ import './Gallery.css';
 
 
 const images = [
-  './images/image1.png',
-  'images/image2.png',
+  
+  'images/RoyalJaipur.JPG',
   
 ];
 
@@ -29,8 +29,8 @@ const Gallery: React.FC = () => {
 `);
 const images = data.allFile.nodes;
   return (
-    <div className="overflow-hidden h-screen relative z-0">
-    <div className="absolute inset-0 flex animate-scroll">
+    <div className="overflow-hidden  z-0">
+    <div className=" inset-0 flex animate-scroll">
       {images.map((image: any, index: any) => {
         const img = getImage(image.childImageSharp.gatsbyImageData);
         return (

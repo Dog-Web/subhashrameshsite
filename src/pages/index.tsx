@@ -3,14 +3,32 @@ import type { HeadFC, PageProps } from "gatsby"
 import Navbar from "./components/Navbar"
 import Gallery from "./components/Gallery"
 import Header from "./Header"
-
+import GalleryLayout from "./components/Layout1"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <main>
       <Header></Header>
       <Navbar ></Navbar>
+	 
       <Gallery/>
+	  <GalleryLayout
+        showImageOnLeft={true}
+        textContent={
+          <>
+            <h2 className="text-3xl font-bold mb-4">Fun wedding photos in Jaipur and beyond</h2>
+            <p className="mb-4">
+            We are two photographers based in the enchanting Pink City of Jaipur. Our journey has taken us to some of the most breathtaking venues in Jaipur and across India. Whether capturing the elegance of royal palace weddings, the splendor of grand hotel ceremonies, or the intimacy of garden weddings, we thrive on the magic of each moment. We've had the honor of documenting traditional temple ceremonies, vibrant outdoor celebrations, and heartfelt family gatherings at estates, luxurious resorts, and historical landmarks. Each location we visit adds a unique charm to the love stories we tell, and we are committed to preserving these memories with the utmost care and creativity.
+            </p>
+            <p>
+              But it doesn’t matter where you are getting married, it’s just a setting. What matters most is the people
+              you choose to celebrate with. We want you to be able to look back at your wedding photos and say, ‘That’s our people!’
+              We want to capture them at their best as they party with you.
+            </p>
+          </>
+        }
+        imageSrc="../images/ClassicPotrait.png" // Replace with your actual image path
+      />
       <a
         href={`https://wa.me/+919785189532`}
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors"

@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="hidden md:flex w-full justify-center space-between bg-white opacity-60 py-4 ">
+    <nav className="hidden sticky md:flex w-full justify-center space-between bg-white opacity-60 py-4 ">
        <ul className="flex space-x-8">
        {navItems.map((item) => {
           const isActive = location.pathname === item.path;
